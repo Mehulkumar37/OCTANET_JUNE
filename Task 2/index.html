@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Commissioner:wght@100..900&family=Signika+Negative:wght@300..700&family=Signika:wght@300..700&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&family=Sora:wght@100..800&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="Navigation">
+        <div class="logo">
+            <img src="./logo.png" alt="logo of to do list web page" >
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Schedule</a>
+            <a href="#">Sign in</a>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="header">
+            <div class="header-title">Today's Progress Summary</div>
+            <div class="header-info">
+                <div class="tasks">Tasks <span id="task-count">0</span></div>
+                <div class="progress">Progress 0%</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="tasks-header">
+                <h2>Today's Tasks</h2>
+                <h3 id="add-task-btn">Add New Task</h3>
+            </div>
+            <div class="task-container">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="add-task-modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Create New Task</h2>
+            <form id="task-form">
+                <label for="task-name">Task Name:</label>
+                <input type="text" id="task-name" name="task-name" required placeholder="Enter task name">
+    
+                <label for="task-date">Date:</label>
+                <input type="date" id="task-date" name="task-date" required placeholder="Select date">
+    
+                <div class="time-inputs">
+                    <div>
+                        <label for="start-time">Start Time:</label>
+                        <input type="time" id="start-time" name="start-time" required placeholder="Select start time">
+                        <select id="start-period" name="start-period">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="end-time">End Time:</label>
+                        <input type="time" id="end-time" name="end-time" required placeholder="Select end time">
+                        <select id="end-period" name="end-period">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <label for="task-description">Description:</label>
+                <textarea id="task-description" name="task-description" rows="4" required placeholder="Enter task description"></textarea>
+    
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
